@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCare Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div class="logo">
+                <img src="/assets/TestLogo.svg" alt="TechCare">
+            </div>
+            <nav>
+                <a href="#" class="active"><img src="/icons/home_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview"> Overview</a>
+                <a href="#" class="highlight"><img src="/icons/group_FILL0_wght300_GRAD0_opsz24.svg" alt="Patients"> Patients</a>
+                <a href="#"><img src="/icons/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="Schedule"> Schedule</a>
+                <a href="#"><img src="/icons/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="Message"> Message</a>
+                <a href="#"><img src="/icons/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt="Transactions"> Transactions</a>
+            </nav>
+            <div class="user-info">
+                <img src="/assets/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" alt="Dr. Jose Simmons">
+                <span>Dr. Jose Simmons</span>
+            </div>
+        </header>
+        <main>
+            <section class="patients-list">
+                <h2>Patients</h2>
+                <input type="search" placeholder="Search patients...">
+                <ul id="patientsList">
+                    <li class="patient-item">
+                        <img src="/assets/Layer 8@2x.png" alt="Emily Williams">
+                        <div class="patient-info">
+                            <strong>Emily Williams</strong>
+                            <span>Female, 30</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 1@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Ryan Johnson</strong>
+                            <span>Male, 45</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 3@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Brandon Mitchell</strong>
+                            <span>Male, 36</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <div class="taylor">
+                    <li class="patient-item">
+                        
+                        <img src="/assets/Layer 2.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <div class="highlight">
+                            <strong>Jessica Taylor</strong>
+                            <span>Female, 28</span>
+                        </div> 
+                        </div>
+                        <button class="more-options">•••</button>
+            
+                    </li>
+                </div>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 4@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Samantha johnson</strong>
+                            <span>Famele, 56</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 5@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Ashley Martiez</strong>
+                            <span>Famel, 54</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 10@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Olivia Brown</strong>
+                            <span>Female, 32</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    <li class="patient-item">
+                        <img src="/assets/Layer 7@2x.png" alt="Ryan Johnson">
+                        <div class="patient-info">
+                            <strong>Tyler Davis</strong>
+                            <span>Male, 19</span>
+                        </div>
+                        <button class="more-options">•••</button>
+                    </li>
+                    
+                </ul>
+            </section>
+            <section class="patient-details">
+                <h2>Diagnosis History</h2>
+                <div class="blood-pressure-chart">
+                    <div class="chart-header">
+                        <h3>Blood Pressure</h3>
+                        <div class="chart-controls">
+                            <select id="timeRange">
+                                <option value="6">Last 6 months</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item systolic">
+                            <span class="legend-color"></span>
+                            <div class="legend-text">
+                                <div class="legend-value">Systolic</div>
+                                <div class="legend-level"></div>
+                            </div>
+                        </div>
+                        <div class="legend-item diastolic">
+                            <span class="legend-color"></span>
+                            <div class="legend-text">
+                                <div class="legend-value">Diastolic</div>
+                                <div class="legend-level"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="bloodPressureChart"></canvas>
+                </div>
+                <div class="vitals">
+                    
+                    <div class="vital-card respiratory">
+                        <div class="vital-card_respiratory">
+                        <img src="/assets/respiratory rate.svg" alt="Respiratory">
+                        <h3>Respiratory Rate</h3>
+                        <p><span id="respiratoryRate"></span> bpm</p>
+                        <span class="status"></span>
+                        </div>
+                    </div>
+                    <div class="vital-card temperature">
+                        <div class="vital-card_temperature">
+                        <img src="/assets/temperature.svg" alt="Temperature">
+                        <h3>Temperature</h3>
+                        <p><span id="temperature"></span>°F</p>
+                        <span class="status"></span>
+                        </div>
+                    </div>
+                    <div class="vital-card heart-rate">
+                        <div class="vital-card_heart-rate">
+                        <img src="/assets/HeartBPM.svg" alt="Heart Rate">
+                        <h3>Heart Rate</h3>
+                        <p><span id="heartRate"></span> bpm</p>
+                        <span class="status"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="diagnostic-list">
+                    <h3>Diagnostic List</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problem/Diagnosis</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="diagnosticList">
+                            <!-- Diagnostic list items will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <aside class="patient-info">
+                <img id="patientAvatar" src="/assets/Layer 2.png" alt="Jessica Taylor">
+                <h2 id="patientName">Jessica Taylor</h2>
+                <ul>
+                    <li>
+                        <img src="/icons/BirthIcon.svg" alt="Date of Birth">
+                        <div>
+                            <strong>Date Of Birth</strong>
+                            <span id="patientDOB">August 23, 1996</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/icons/FemaleIcon.svg" alt="Gender">
+                        <div>
+                            <strong>Gender</strong>
+                            <span id="patientGender">Female</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/icons/PhoneIcon.svg" alt="Contact">
+                        <div>
+                            <strong>Contact Info</strong>
+                            <span id="patientContact">(415) 555-1234</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/icons/PhoneIcon.svg" alt="Emergency">
+                        <div>
+                            <strong>Emergency Contact</strong>
+                            <span id="patientEmergencyContact">(415) 555-5678</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/icons/InsuranceIcon.svg" alt="Insurance">
+                        <div>
+                            <strong>Insurance Provider</strong>
+                            <span id="patientInsurance">Sunrise Health Insurance</span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="show-all">Show All Information</button>
+                <div class="lab-results">
+                    <h3>Lab Results</h3>
+                    <ul id="labResultsList">
+                        <!-- Lab results will be dynamically populated here -->
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

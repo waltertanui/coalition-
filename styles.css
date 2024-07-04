@@ -1,0 +1,384 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+nav a img {
+    margin-right: 0.5rem;
+}
+
+nav a.active {
+    color: #00a8ff;
+}
+
+nav a.highlight {
+    background-color: #00a8ff;
+    color: white;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.patients-list {
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.patients-list h2 {
+    margin-bottom: 1rem;
+}
+
+.patients-list input[type="search"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+#patientsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.patient-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.patient-item .patient-info {
+    flex: 1;
+}
+
+.patient-item .patient-info strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.patient-item .patient-info span {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.patient-item .more-options {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.patient-details {
+    flex: 3;
+}
+
+.blood-pressure-chart {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.vitals {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.vital-card {
+    flex: 1;
+    background-color: white;
+    
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.vital-card_respiratory {
+    background-color: #E0F3FA;
+}
+.vital-card_temperature {
+    background-color: #FFE6E9;
+}
+.vital-card_heart-rate{
+    background-color: #FFE6E9;
+}
+.diagnostic-list {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.diagnostic-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.diagnostic-list th, .diagnostic-list td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-info {
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.patient-info img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.patient-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.patient-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.patient-info li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+.patient-info li span {
+    
+    font-size: small;
+}
+
+
+.show-all {
+    background-color: #00a8ff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+.lab-results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lab-results li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.lab-results a {
+    text-decoration: none;
+    color: #00a8ff;
+}
+
+
+
+
+.blood-pressure-chart {
+    background-color: #FFE6F1;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chart-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#timeRange {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.legend .systolic::before {
+    content: '•';
+    color: #ff6384;
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.legend .diastolic::before {
+    content: '•';
+    color: #36a2eb;
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+#bloodPressureChart {
+    height: 250px;
+}
+
+
+
+.legend {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-item.systolic .legend-color {
+    background-color: rgb(255, 99, 132);
+}
+
+.legend-item.diastolic .legend-color {
+    background-color: rgb(54, 162, 235);
+}
+
+.legend-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-value {
+    font-weight: bold;
+}
+
+.legend-level {
+    font-size: 0.8em;
+    color: #666;
+}
+
+
+.lab-results {
+    margin-top: 20px;
+}
+
+.lab-results h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#labResultsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#labResultsList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#labResultsList li:last-child {
+    border-bottom: none;
+}
+
+.download-link img {
+    width: 20px;
+    height: 20px;
+}
+.taylor{
+    background-color: #01F0D0;
+}
